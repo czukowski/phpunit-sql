@@ -34,7 +34,7 @@ class AssertTraitTest extends Testcase
     private function runTestAssertEqualsSQLQueries($object, $arguments, $expected)
     {
         $this->expectExceptionFromArgument($expected);
-        $actual = $object->assertEqualsSQLQueries(...$arguments);
+        $actual = call_user_func_array([$object, 'assertEqualsSQLQueries'], $arguments);
         $this->assertSame($expected, $actual);
     }
 
@@ -85,7 +85,7 @@ class AssertTraitTest extends Testcase
     private function runTestAssertExecutedSQLQueries($object, $arguments, $expected)
     {
         $this->expectExceptionFromArgument($expected);
-        $actual = $object->assertExecutedSQLQueries(...$arguments);
+        $actual = call_user_func_array([$object, 'assertExecutedSQLQueries'], $arguments);
         $this->assertSame($expected, $actual);
     }
 
@@ -178,7 +178,7 @@ class AssertTraitTest extends Testcase
     {
         // `$executed=NULL` is a special case for when a database driver is not set/implemented.
         if ($executed !== NULL) {
-            $db = $this->getMockForAbstractClass(DatabaseDriverInterface::class);
+            $db = $this->getMockForAbstractClass('Cz\PHPUnit\SQL\DatabaseDriverInterface');
             $db->expects($this->any())
                 ->method('getExecutedQueries')
                 ->willReturn($executed);
@@ -189,7 +189,7 @@ class AssertTraitTest extends Testcase
     private function createMockObject($dbDriverMock = NULL)
     {
         $methods = $dbDriverMock === NULL ? [] : ['getDatabaseDriver'];
-        $object = $this->getMockForTrait(AssertTrait::class, [], '', TRUE, TRUE, TRUE, $methods);
+        $object = $this->getMockForTrait('Cz\PHPUnit\SQL\AssertTrait', [], '', TRUE, TRUE, TRUE, $methods);
         $object->expects($this->any())
             ->method('assertThat')
             ->willReturnCallback(function ($value, Constraint $constraint, $message = '') {
