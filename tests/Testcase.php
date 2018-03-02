@@ -2,8 +2,8 @@
 namespace Cz\PHPUnit\SQL;
 
 use Exception,
-    PHPUnit\Framework\TestCase as FrameworkTestCase,
-    PHPUnit\Framework\ExpectationFailedException;
+    PHPUnit_Framework_TestCase as FrameworkTestCase,
+    PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException;
 
 /**
  * Testcase

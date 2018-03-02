@@ -2,9 +2,9 @@
 namespace Cz\PHPUnit\SQL;
 
 use LogicException,
-    PHPUnit\Framework\Assert,
-    PHPUnit\Framework\Constraint\Constraint,
-    PHPUnit\Framework\Exception,
+    PHPUnit_Framework_Assert as Assert,
+    PHPUnit_Framework_Constraint as Constraint,
+    PHPUnit_Framework_Exception as Exception,
     ReflectionMethod;
 
 /**

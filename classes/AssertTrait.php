@@ -2,7 +2,7 @@
 namespace Cz\PHPUnit\SQL;
 
 use LogicException,
-    PHPUnit\Framework\Constraint\Constraint;
+    PHPUnit_Framework_Constraint as Constraint;
 
 /**
  * AssertTrait

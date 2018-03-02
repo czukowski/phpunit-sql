@@ -2,7 +2,7 @@
 namespace Cz\PHPUnit\SQL;
 
 use LogicException,
-    PHPUnit\Framework\Assert;
+    PHPUnit_Framework_Assert as Assert;
 
 /**
  * AssertTraitObjectExtendsAssert

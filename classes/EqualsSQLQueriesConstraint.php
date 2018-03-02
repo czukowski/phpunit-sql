@@ -1,8 +1,8 @@
 <?php
 namespace Cz\PHPUnit\SQL;
 
-use PHPUnit\Framework\Constraint\IsEqual,
-    PHPUnit\Framework\ExpectationFailedException,
+use PHPUnit_Framework_Constraint_IsEqual as IsEqual,
+    PHPUnit_Framework_ExpectationFailedException as ExpectationFailedException,
     SebastianBergmann\Comparator\ComparisonFailure;
 
 /**
