@@ -27,7 +27,7 @@ abstract class Testcase extends FrameworkTestCase
     public function expectExceptionFromArgument($expected)
     {
         if ($expected instanceof Exception) {
-            $this->expectException(get_class($expected));
+            $this->setExpectedException(get_class($expected));
         }
     }
 }
