@@ -1,7 +1,7 @@
 SQL strings testing for PHPUnit
 ===============================
 
-![PHPUnit](https://github.com/czukowski/phpunit-sql/workflows/PHPUnit/badge.svg=phpunit-8)
+![PHPUnit](https://github.com/czukowski/phpunit-sql/workflows/PHPUnit/badge.svg?branch=phpunit-8)
 
 A constraint and assert method for testing SQL strings equality while ignoring whitespace.
 Can be useful for testing results of query builders (especially those for long and complex
